@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Stacking Studios</title>
+<title>stacking studios</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500&display=swap" rel="stylesheet">
 
 <style>
 *{
@@ -18,21 +18,42 @@
 }
 
 body{
-    height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
-    background:#0d0d0d;
+    height:100vh;
+    background:#080808;
     overflow:hidden;
 }
 
 h1{
-    color:#fff;
-    font-family:"Inter",sans-serif;
-    font-size:clamp(48px,7vw,88px);
+    color:#ffffff;
+    font-family:"Manrope",sans-serif;
+    font-size:clamp(42px,6vw,72px);
     font-weight:500;
-    letter-spacing:6px;
-    animation:fadeIn 1s ease-out;
+    letter-spacing:2px;
+    display:flex;
+    align-items:center;
+    animation:fadeIn 1s ease;
+}
+
+.dots{
+    display:inline-block;
+    width:1.2em;
+    text-align:left;
+}
+
+@keyframes blinkDots{
+    0%   { content:""; }
+    25%  { content:"."; }
+    50%  { content:".."; }
+    75%,
+    100% { content:"..."; }
+}
+
+.dots::after{
+    content:"";
+    animation:blinkDots 1.5s steps(1,end) infinite;
 }
 
 @keyframes fadeIn{
@@ -46,11 +67,14 @@ h1{
     }
 }
 </style>
+
 </head>
 
 <body>
 
-<h1>Coming Soon...</h1>
+<h1>
+    coming soon<span class="dots"></span>
+</h1>
 
 </body>
 </html>
